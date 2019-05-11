@@ -1,0 +1,64 @@
+{
+  "Print to console": {
+    "scope": "javascript,typescript",
+    "prefix": "clg",
+    "body": [
+      "console.log({ $1 });"
+    ],
+    "description": "Log output to console"
+  },
+  "Stateless Component": {
+    "scope": "javascript,typescript",
+    "prefix": "react:component",
+    "body": [
+      "import React from 'react';",
+      "import PropTypes from 'prop-types';\n",
+
+      "const ${1:Component} = ({ ${2:props} }) => {",
+        "\tconst component = ;",
+        "\tconsole.log('Stateless Component ${1:Component} created');\n",
+
+        "\treturn (",
+          "\t\t<div className=\"${1:Component}\">",
+            "\t\t\tHello { ${2:props} }",
+          "\t\t</div>",
+        "\t);",
+      "};\n",
+      
+      "${1:Component}.propTypes = {",
+        "\t${2:props}: PropTypes.BLA.isRequired",
+      "};\n",
+
+      "export default ${1:Component}; \n"
+    ],
+    "description": "Create a simple Stateless Component"
+  },
+  "Statefull Component": {
+    "scope": "javascript,typescript",
+    "prefix": "react:stateFull-component",
+    "body": [
+      "import React, { Component } from 'react';",
+      "import PropTypes from 'prop-types';\n",
+
+      "class ${1:Component} extends Component {",
+        "\tstate = {}\n",
+
+        "\tcomponentDidMount() {}\n",
+
+        "\trender () {",
+          "\t\treturn (",
+            "\t\t\t<div className=\"${1:Component}\">",
+            "\t\t\t</div>",
+          "\t\t)",
+        "\t}",
+      "}\n",
+
+      "${1:Component}.propTypes = {",
+        "\t${2:props}: PropTypes.BLA.isRequired",
+      "};\n",
+
+      "export default ${1:Component};\n"
+    ],
+    "description": "Create a simple Stateless Component"
+  }
+}
